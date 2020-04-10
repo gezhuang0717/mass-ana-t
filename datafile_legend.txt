@@ -1,0 +1,62 @@
+#Format of output file. Tab-separated '\t'
+#Date-time is space separated
+#
+#column	what_is_there			example		comments
+1	element_name_scan_number	ga62_3
+2	scan number			3
+3	total number of classes		3
+4	current class			1		0 < this < (column3-1)
+5	average counts in class		2.56
+6	count window 			0-4
+7	tof-window [bins]		160-600
+8	tof-window [micro s]		102.4-384
+9	counts in class			1412
+10	total counts			3986
+11	fitted freq of class		1734920.781876
+12	fit error (chisq corrected)	0.03636216152508
+13	where to extrapolate		0.6		should be MCP eff
+14	extrapolated value		1734920.711036
+15	extrapolated value error	0.07693955825639
+16	chisq of the fit		1.375977307546
+17	date				2005-09-02
+18 	time				18:09:15
+19	T_RF				0.4		[s]
+20	T_RF_err			0		[s]
+21	pressure			4.764e-06	[mbar?]
+22	pressure_err			3.21e-07	[mbar?]
+23	axial_E				0.5954078767	[eV]
+24	axial_E_err			0.0117		[eV]
+25	magnetron_radius		1.2249		[mm]
+26	magnetron_radius_err		0.061		[mm]
+27	cyclotron_radius		1e-6		[mm]
+28	cyclotron_radius_err		0		[mm]
+29	phase				1		[radian]
+30	phase_err			0		[radian]
+31	Conversions			21.59		[x] How many times motions converted 
+32	Conversions_err			1.77		[x]
+33	fitted or not?			11110001	f,p,axE,w-,w+,fi,t_rf,v_rf
+34	How many bunches/spectrum	1		should be 1 if singel bunch mode
+35	Total spectrums loaded		1500
+36	A of atom			62
+37	Z-class fit slope		0.0085124	[Hz/ (1 ion/bunch)]
+38	Z-class fit slope error		0.0003343	"
+39	Z-class fit zero-crossing	2336532.2	Hz
+40	Z-class fit zero cross err	0.014342	Hz
+41	freq2 of class			1234567.8901	Hz
+42	freq2 err of class		0.001		Hz
+43	fraction of freq2 from all	40		%
+44	fraction err			2		%
+45	statistical error bar used	sum_stat	Affects the tof-errorbar
+46	round skip list used		"1,2-4"		
+47	signal-to-noise ratio		4.04
+48	charge state			1
+49	What was the fit function	Ramsey_with_1_peak
+50	fitted TOF of crap		220		us
+51	fitted TOF of crap err		30		us
+52	fitted amount of crap		10		%
+53	fitted amount of crap err	5		%
+54	lakritsi version used		158		Since version 158
+55	freq3 of class			345678.9021	Hz
+56	freq3 err of class		0.002		Hz
+57	fraction of freq3		30		% (of all three)
+58	fraction err of freq3		0.3		%

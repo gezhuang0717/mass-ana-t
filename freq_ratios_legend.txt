@@ -1,0 +1,20 @@
+#Format of freq_ratios.txt file, TAB-separated '\t' except time just ' '
+
+# 2006-05-05: NOTE: mass excess error is obtained from formula
+#	d_me = sqrt ( 	(m_ref*delta_x)^2 + (x*delta_m_ref)^2+
+#			(delta_ctrate/ion_freq * m_ion)^2 +
+#			(delta_mass_dep*m_ion*(A_ref-A_ion))^2 )
+#column	what?
+1	DATE
+2	TIME
+3	freq-ratio
+4	freq-ratio error
+5	Q-value
+6	Q-value error
+7	mass excess
+8	mass excess error
+9	used countrate error (Hz)
+10	used mass dependent error (ppb/u)
+11	B-field fluctuation (Hz)
+12	time difference of reference measurements (before and after ion of interest) (min)
+13	Lakritsi version used in measurement freq scan analysis //since version 158

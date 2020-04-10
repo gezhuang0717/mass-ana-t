@@ -1,0 +1,26 @@
+#Format of mass calculator outputfile; tab separated, '\t'
+#Output of FINAL VALUES
+#column	what_is_there			example		comments
+1	name of collection		CaScm5
+2	b-field fluctuation 		.0015		[Hz] or 10^{-10}/min
+3	frequency ratio			1.00000031
+4	frequency ratio error		1.2e-9		chisq corrected+syst err
+5	chisq of freq ratio		0.3256
+6	q-value				7042.22		
+7	q-value error			0.222		chisq corrected+syst err
+8	RESERVED			-1
+9	mass excess			-25000		
+10	me error			0.2324		chisq corr+syst err+ref_mass_err+massdep
+11	RESERVED			-1
+12	A of reference			42
+13	A of measurement		42
+14	mass excess of ref		-31404.40
+15	mass excess err of ref		0.250
+16	number of measurements		11
+17	used residual error		2		[ppb]
+18	used mass dependent error	0.7		[ppb/u]
+19	Outer error of freq ratio	5.0e-9
+20	Birge Ratio			1.03
+21	Which used? inner or outer?	inner
+22	q of reference			1
+23	q of measurement		1

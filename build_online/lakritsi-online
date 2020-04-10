@@ -1,0 +1,8 @@
+# ace library path when compiled at xeniaali-virtual.igisol.
+
+#Run this at home directory of igisol. /home/igisol
+#!/bin/bash
+
+export LD_LIBRARY_PATH=/opt/ace-6.4.0/lib
+cd /home/igisol/lakritsi_online/build_online/src
+./lakritsi -ORBDefaultInitRef 'iiop://corba-naming:4001'

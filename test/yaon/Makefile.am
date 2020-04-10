@@ -1,0 +1,13 @@
+AM_CFLAGS = \
+	$(LIBCURL_CFLAGS) \
+	$(OPENSSL_CFLAGS) \
+	$(GTKMM_CFLAGS) \
+	@BOOST_CPPFLAGS@ \
+	-DGIT_VERSION=\"$(GIT_VERSION)\" \
+	-DCOMPILE_DATE=\"$(COMPILE_DATE)\"
+
+INCLUDES = -I$(top_srcdir)/extras
+
+noinst_PROGRAMS = main
+main_SOURCES = main.cpp
+main_CPPFLAGS = @BOOST_CPPFLAGS@

@@ -1,0 +1,30 @@
+#E-field file. Created 2005-10-06
+#
+# Constants to create b-field. Have to be single characters
+# and tab separated.
+[CONSTANTS]
+a	6.54383314833146
+b	0.0114934829327628
+c	-8.44433065012339e-05
+d	16.9405462039698
+e	-0.0696147263723417
+f	7.39347740536369e-05
+g	3.80482240592299
+h	-0.0108790280932363
+i	7.90983561351425e-06
+#from	to	e-pot	b_1	b_2*x	b_3*x^2
+[FIELDS]
+0	10	-1	7	0	0	#ring
+10	23	-1	7	0	0	#corr1
+23	30	-1	7	0	0	#corr2
+30	52	-1	7	0	0	#ec1
+52	75	-1	a	b	c	#ec2
+75	98	-2	a	b	c	#next
+98	256	-3	a	b	c	#long
+256	321	-4	d	e	f	#2nd last trap el
+321	418	-4	d	e	f	#last trap el + plug1
+418	450	-4	d	e	f	#plug2 (1/2)
+450	585	-4	g	h	i	#plug2 (2/2)
+585	700	-120	g	h	i	#extr1
+700	780	-1500	0.05	0	0	#extr2
+780	1600	-30000	0.02	0	0	#all the rest

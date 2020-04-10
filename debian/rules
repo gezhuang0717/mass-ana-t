@@ -1,0 +1,107 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+top_dir := $(shell pwd)
+DT := $(shell pwd)/debian/tmp
+destdir1 := $(shell pwd)/debian/lakritsi
+destdir2 := $(shell pwd)/debian/lakritsi-online
+destdir3 := $(shell pwd)/debian/lakritsi-gtk3
+destdir4 := $(shell pwd)/debian/lakritsi-online-gtk3
+package_version := 1.1.2
+
+NUMJOBS = 1
+
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+ NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+endif
+
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
+.PHONY: override_dh_auto_auto_configure override_dh_auto_build-arch override_dh_auto_install-arch override_dh_auto_clean-arch
+
+override_dh_auto_configure:
+	-mkdir -p build/gtk2
+	cd build/gtk2 && ../../configure \
+	--prefix=/usr \
+	--with-gtkmm-version=gtkmm2 --datadir=/usr/share/lakritsi
+
+	-mkdir -p build/gtk2-online
+	cd build/gtk2-online && ../../configure \
+	--prefix=/usr \
+	--with-gtkmm-version=gtkmm2 --datadir=/usr/share/lakritsi \
+	--enable-online
+
+	-mkdir -p build/gtk3
+	cd build/gtk3 && ../../configure \
+	--prefix=/usr \
+	--with-gtkmm-version=gtkmm3 --datadir=/usr/share/lakritsi
+
+	-mkdir -p build/gtk3-online
+	cd build/gtk3-online && ../../configure \
+	--prefix=/usr \
+	--with-gtkmm-version=gtkmm3 --datadir=/usr/share/lakritsi \
+	--enable-online
+
+override_dh_auto_build-arch:
+	cd build/gtk2 && $(MAKE) -j$(NUMJOBS)
+	cd build/gtk2-online && $(MAKE) -j$(NUMJOBS)
+	cd build/gtk3 && $(MAKE) -j$(NUMJOBS)
+	cd build/gtk3-online && $(MAKE) -j$(NUMJOBS)
+
+override_dh_auto_install-arch:
+	mkdir -p $(DT)/usr/share
+	mkdir -p $(destdir1) $(destdir2) $(destdir3) $(destdir4)
+
+	cd build/gtk2 && $(MAKE) install DESTDIR=$(destdir1)
+	cd build/gtk2-online && $(MAKE) install DESTDIR=$(destdir2)
+	cd build/gtk3 && $(MAKE) install DESTDIR=$(destdir3)
+	cd build/gtk3-online && $(MAKE) install DESTDIR=$(destdir4)
+
+	mv $(destdir2)/usr/bin/lakritsi $(destdir2)/usr/bin/lakritsi-online
+	mv $(destdir3)/usr/bin/lakritsi $(destdir3)/usr/bin/lakritsi-gtk3
+	mv $(destdir3)/usr/bin/coma     $(destdir3)/usr/bin/coma-gtk3
+	mv $(destdir3)/usr/bin/ramseyer $(destdir3)/usr/bin/ramseyer-gtk3
+	mv $(destdir4)/usr/bin/lakritsi $(destdir4)/usr/bin/lakritsi-online-gtk3
+	for file in coma ramseyer; do \
+		rm -f $(destdir2)/usr/bin/$$file; \
+		rm -f $(destdir4)/usr/bin/$$file; \
+	done
+
+	mv $(destdir1)/usr/share/* $(DT)/usr/share/
+
+	for dir in doc share; do \
+		rm -rf $(destdir1)/usr/$$dir; rm -rf $(destdir2)/usr/$$dir; \
+		rm -rf $(destdir3)/usr/$$dir; rm -rf $(destdir4)/usr/$$dir; \
+	done
+
+override_dh_auto_clean-arch:
+	rm -rf $(DT)
+	rm -rf $(top_dir)/build
+	rm -rf $(destdir1) $(destdir2) $(destdir3) $(destdir4)
+
+	rm -f $(top_dir)/src/*.inc
+	rm -f $(top_dir)/util/*.pyc
+
+%:
+	dh $@ --with autoreconf
+
+gitarchive:
+	dh_testdir
+	-rm -f ../lakritsi_$(package_version).orig.tar.xz
+	git archive --format=tar \
+	    --prefix=lakritsi-$(package_version)/ HEAD . > ../lakritsi_$(package_version).orig.tar
+	git describe --always > $(top_dir)/src/VERSION
+	tar -rf ../lakritsi_$(package_version).orig.tar \
+		--owner root --group root \
+		--transform 's,src/VERSION,lakritsi-$(package_version)/src/VERSION,' \
+		src/VERSION
+	xz -v ../lakritsi_$(package_version).orig.tar

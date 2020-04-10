@@ -1,0 +1,47 @@
+Source: lakritsi
+Section: unknown
+Priority: extra
+Maintainer: Jani Hakala <jahakala@iki.fi>
+Build-Depends: debhelper (>= 9~), dh-autoreconf,
+	autotools-dev, autoconf (>= 2.69), automake, libtool, python,
+	libgtkmm-2.4-dev (>= 2.24.0),
+	libgtkmm-3.0-dev (>= 3.4.2),
+	libcurl4-dev,
+	libboost-system-dev,
+	libboost-date-time-dev,
+	libboost-filesystem-dev,
+	libtao-dev (>= 6.2.5),
+	libtao-orbsvcs-dev (>= 6.2.5),
+	libtao-orbsvcs-dev (>= 6.2.5),
+	tao-idl (>= 6.2.5),
+	ace-gperf (>= 6.2.5)
+Standards-Version: 3.9.6
+
+Package: lakritsi
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, lakritsi-common (= ${binary:Version})
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: lakritsi-online
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, lakritsi-common (= ${binary:Version})
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: lakritsi-gtk3
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, lakritsi-common (= ${binary:Version})
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: lakritsi-online-gtk3
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, lakritsi-common (= ${binary:Version})
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: lakritsi-common
+Architecture: all
+Description: common files for lakritsi
+ <insert long description, indented with spaces>

@@ -1,0 +1,230 @@
+{
+  "devices": {
+    "mcs": {
+      "bin width": 640,
+      "bins per record": 1024,
+      "discriminator level": -0.100D,
+      "discriminator slope": "falling",
+      "python class": "sr430.SR430",
+      "records per scan": 1,
+      "trigger level": 2.000D,
+      "trigger slope": "rising"
+    },
+    "ppg": {
+      "timings": [
+        {
+          "channel": 1,
+          "in clear cycle": true,
+          "start": 10000.0D,
+          "stop": 470000.0D
+        },
+        {
+          "channel": 2,
+          "in clear cycle": true,
+          "start": 0.0D,
+          "stop": 40.0D
+        },
+        {
+          "channel": 3,
+          "in clear cycle": true,
+          "start": 0.0D,
+          "stop": 149.5D
+        },
+        {
+          "channel": 11,
+          "in clear cycle": true,
+          "start": 90000.0D,
+          "stop": 100000.0D
+        },
+        {
+          "channel": 12,
+          "in clear cycle": true,
+          "start": 100000.0D,
+          "stop": 230000.0D
+        },
+        {
+          "channel": 4,
+          "in clear cycle": true,
+          "start": 230000.0D,
+          "stop": 230076.7D
+        },
+        {
+          "channel": 8,
+          "in clear cycle": true,
+          "start": 230000.0D,
+          "stop": 230076.7D
+        },
+        {
+          "channel": 4,
+          "in clear cycle": true,
+          "start": 300000.0D,
+          "stop": 300076.7D
+        },
+        {
+          "channel": 8,
+          "in clear cycle": true,
+          "start": 300000.0D,
+          "stop": 300076.7D
+        },
+        {
+          "channel": 12,
+          "in clear cycle": true,
+          "start": 310000.0D,
+          "stop": 360000.0D
+        },
+        {
+          "channel": 4,
+          "in clear cycle": true,
+          "start": 360000.0D,
+          "stop": 360076.7D
+        },
+        {
+          "channel": 8,
+          "in clear cycle": true,
+          "start": 360000.0D,
+          "stop": 360076.7D
+        },
+        {
+          "channel": 13,
+          "in clear cycle": true,
+          "start": 370000.0D,
+          "stop": 380000.0D
+        },
+        {
+          "channel": 14,
+          "in clear cycle": true,
+          "start": 380000.0D,
+          "stop": 480000.0D
+        },
+        {
+          "channel": 14,
+          "in clear cycle": true,
+          "start": 0.0D,
+          "stop": 100000.0D
+        },
+        {
+          "channel": 59,
+          "in clear cycle": true,
+          "start": 110000.0D,
+          "stop": 111000.0D
+        },
+        {
+          "channel": 24,
+          "in clear cycle": true,
+          "start": 0.0D,
+          "stop": 480000.0D
+        }
+      ]
+    },
+    "trap rf 1": {
+      "GPIB address": "GPIB1::3::INSTR",
+      "amplitude": 0.720D,
+      "burst count": 17,
+      "enabled": true,
+      "frequency": 1700.0D,
+      "high impedance": false,
+      "offset": 0.000D,
+      "phase": 0.000D,
+      "python class": "hprf.HPRF",
+      "shape": "sine",
+      "trigger mode": "burst start"
+    },
+    "trap rf 2": {
+      "GPIB address": "GPIB1::8::INSTR",
+      "amplitude": 0.220D,
+      "burst count": 1,
+      "enabled": true,
+      "frequency": 790680.0D,
+      "high impedance": false,
+      "offset": 0.000D,
+      "phase": 0.000D,
+      "python class": "hprf.HPRF",
+      "shape": "sine",
+      "trigger mode": "gated burst"
+    },
+    "trap rf 3": {
+      "GPIB address": "GPIB1::6::INSTR",
+      "amplitude": 0.050D,
+      "burst count": 1,
+      "enabled": true,
+      "frequency": 145.0D,
+      "high impedance": false,
+      "offset": 0.000D,
+      "phase": 0.000D,
+      "python class": "hprf.HPRF",
+      "shape": "sine",
+      "trigger mode": "burst start"
+    },
+    "trap rf 4": {
+      "GPIB address": "GPIB1::5::INSTR",
+      "amplitude": 0.056D,
+      "burst count": 1,
+      "enabled": true,
+      "frequency": 808562.3D,
+      "high impedance": true,
+      "offset": 0.000D,
+      "phase": 0.000D,
+      "python class": "hprf.HPRF",
+      "shape": "sine",
+      "trigger mode": "gated burst"
+    },
+    "trap rf 5": {
+      "GPIB address": "GPIB1::2::INSTR",
+      "amplitude": 1.200D,
+      "burst count": 1,
+      "enabled": true,
+      "frequency": 827077.0D,
+      "high impedance": false,
+      "offset": 0.000D,
+      "phase": 0.000D,
+      "python class": "hprf.HPRF",
+      "shape": "sine",
+      "trigger mode": "gated burst"
+    },
+    "trap rf 6": {
+      "GPIB address": "GPIB1::4::INSTR",
+      "amplitude": 5.000D,
+      "burst count": 1,
+      "enabled": true,
+      "frequency": 20.0D,
+      "high impedance": false,
+      "offset": -0.011D,
+      "phase": 0.000D,
+      "python class": "hprf.HPRF",
+      "shape": "square",
+      "trigger mode": "burst start"
+    },
+    "trap rf 7": {
+      "GPIB address": "GPIB1::1::INSTR",
+      "amplitude": 0.180D,
+      "burst count": 1,
+      "enabled": true,
+      "frequency": 1700.0D,
+      "high impedance": false,
+      "offset": 0.000D,
+      "phase": 0.000D,
+      "python class": "hprf.HPRF",
+      "shape": "sine",
+      "trigger mode": "gated burst"
+    }
+  },
+  "scan": {
+    "clear cycles": 4,
+    "excitation time": 200,
+    "first scan range": 1,
+    "magnet field": 0.173230D,
+    "magnet tuning": true,
+    "ranges": [
+      {
+        "start": 790554.800D,
+        "step": 0.800D,
+        "stop": 790586.800D
+      }
+    ],
+    "rf": "trap rf 4",
+    "rf parameter": "frequency",
+    "rounds": 16,
+    "single bunches": true,
+    "stop ppg": false
+  }
+}

@@ -1,0 +1,57 @@
+#ifndef JYFLTRAP_IDL
+#define JYFLTRAP_IDL
+
+/*
+ * Author 2007-2013 Jani J. Hakala, Jyväskylä, Finland (jahakala@iki.fi)
+ */
+#if defined(ERLANG)
+#include <CosNotification.idl>
+#include <CosNotifyComm.idl>
+#endif
+
+module JYFLTRAP {
+    exception NotImplemented  { };
+
+    typedef sequence<string> Setting_Component_List;
+
+    struct Setting {
+	Setting_Component_List components;
+    };
+
+    typedef sequence<Setting> Setting_List;
+
+    struct Measurement_Info {
+	string 		measurement_id;
+	string		start_time;
+	unsigned short	bin_width;
+	unsigned short	bins;
+
+	Setting_List	settings;
+    };
+
+    struct Bunch_Data_Item {
+	unsigned short	bin;
+	unsigned short  count;
+    };
+   
+    typedef sequence<Bunch_Data_Item> Bunch_Count_Seq;
+    struct Bunch_Data {
+	unsigned long	seqno;
+	string 		frequency;
+	string		timestamp;
+	Bunch_Count_Seq counts;
+    };
+
+    typedef sequence<Bunch_Data> Bunch_Seq;
+
+    struct Bunch_Pack {
+	string		measurement_id;
+	Bunch_Seq	bunches;
+    };
+#if defined(ERLANG)
+    interface Consumer:CosNotifyComm::StructuredPushConsumer {
+    };
+#endif
+};
+
+#endif

@@ -1,0 +1,23 @@
+# This file was created 2014-06-02.
+# This file contains JYFLTRAP frequency and timing calibrations.
+# Lines starting with '#' Are ignored.
+# Data is saved in blocks. Each block contain a header in [..]
+# followed by lines (fields) that have 'start time', 'element for calibration', 'measured value'
+# 'end time' will be the next line's 'start time'
+# Make chronological entries!
+# Fields are space separated! Date format YYYY-MM-DD HH:MM (space in between)
+# 
+# For now, all calibrations are single-point.
+
+[trap1 cyclotron]
+2002-01-01 00:00 Cu63 1700.00
+
+[trap1 modified cyclotron]
+
+[trap1 magnetron]
+
+[trap2 cyclotron]
+
+[trap2 modified cyclotron]
+
+[trap2 magnetron]

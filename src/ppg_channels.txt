@@ -1,0 +1,82 @@
+# This file was created 2014-06-03.
+# This file contains JYFLTRAP PPG channel configuration.
+# Lines starting with '#' Are ignored.
+# Data is saved in blocks. Each block has a header like [1] (for channel 1)
+# followed by lines (fields) that have 'start time', 'function'
+# 'end time' will be the next line's 'start time'
+# Make chronological entries!
+# Fields are space separated! Date format YYYY-MM-DD HH:MM (space in between)
+#
+
+[1]
+2010-01-01 00:00 beam gate
+
+[2]
+2010-01-01 00:00 RFQ extraction
+
+[3]
+2010-01-01 00:00 trap1 injection 
+
+[4]
+2010-01-01 00:00 trap1 extraction
+
+[5]
+2010-01-01 00:00 trap2 extraction
+
+[6]
+2010-01-01 00:00 not connected
+
+[7]
+2010-01-01 00:00 trap2 extra extraction wall
+
+[8]
+2010-01-01 00:00 trap1 extraction
+
+[9]
+2010-01-01 00:00 MCS trigger
+
+[10]
+2010-01-01 00:00 signal to spectroscopy
+
+[11]
+2010-01-01 00:00 RF1 trap1 dipole
+
+[12]
+2010-01-01 00:00 RF2 trap1 quadrupole
+
+[13]
+2010-01-01 00:00 RF3 trap2 dipole
+
+[14]
+2010-01-01 00:00 RF4 trap2 quadrupole
+
+[15]
+2010-01-01 00:00 RF5 trap2 dipole
+
+[16]
+2010-01-01 00:00 RF6 amplitude modulator for RF4
+
+[17]
+2010-01-01 00:00 not connected
+
+[18]
+2010-01-01 00:00 not connected
+
+[19]
+2010-01-01 00:00 not connected
+
+[20]
+2010-01-01 00:00 not connected
+
+[21]
+2010-01-01 00:00 not connected
+
+[22]
+2010-01-01 00:00 not connected
+
+[23]
+2010-01-01 00:00 not connected
+
+[24]
+2010-01-01 00:00 not connected
+

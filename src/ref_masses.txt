@@ -1,0 +1,11 @@
+#This is tab-separated list
+#empty lines and lines starting with '#' are discarded 
+#Units in keV
+
+#Name	mass_excess	me_error
+#129Xe	-88696.0594	0.0102
+#132Xe	-89278.9632	0.0093
+#130Xe	-89880.4615	0.0140
+#136Xe	-86429.1523	0.0102
+#84Kr	-82439.3334	0.0075
+#86Kr	-83265.6645	0.0075
